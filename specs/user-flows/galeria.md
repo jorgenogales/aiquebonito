@@ -53,3 +53,4 @@ username: "Pepe Luis"
 (string) 
 votes: 1
 - Que permitan upvotear un prompt. Esto incrementará en 1 los votos del prompt y retirar un voto lo cual restará un voto. La modificación del número de votos en Firestore se tendrá que hacer de forma transaccional.
+- Los nombres de las funciones deberán tener un prefijo como "aiquebonito_" para identificarlas claramente
