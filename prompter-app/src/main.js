@@ -9,11 +9,7 @@ import { httpsCallable } from "firebase/functions";
 // ============================================================================
 const BYPASS_PASSCODE_DEMO = false;
 
-// 1. Inicializar el Fondo de Partículas Antigravedad
-document.addEventListener("DOMContentLoaded", () => {
-  initParticles("particles-canvas");
-  checkLocalSession();
-});
+
 
 // 2. Selectores de Elementos de la Interfaz (SPA)
 const mainCard = document.getElementById("main-card");
@@ -260,7 +256,7 @@ async function handleSubmitPrompt() {
 
   try {
     // Instanciar la Cloud Function remota o local segura (submitPrompt)
-    const submitPromptFn = httpsCallable(functions, "submitPrompt");
+    const submitPromptFn = httpsCallable(functions, "PBsubmitPrompt");
 
     const result = await submitPromptFn({
       promptText: text,
@@ -330,7 +326,7 @@ async function handleLogin() {
   btnLogin.disabled = true;
 
   try {
-    const verifyPasscodeFn = httpsCallable(functions, "verifyPasscode");
+    const verifyPasscodeFn = httpsCallable(functions, "PBverifyPasscode");
     const result = await verifyPasscodeFn({ passcode });
 
     if (result.data && result.data.success) {
@@ -385,5 +381,17 @@ btnLogin.addEventListener("click", handleLogin);
 passcodeInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") handleLogin();
 });
+
+// 1. Inicializar el Fondo de Partículas Antigravedad
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initApp);
+} else {
+  initApp();
+}
+
+function initApp() {
+  initParticles("particles-canvas");
+  checkLocalSession();
+}
 
 

@@ -9,6 +9,7 @@
 
 ### GALLERY (LANDING PAGE)
 * Puedes encontrar un wireframe del diseño en el proyecto "AI Qué Bonito" de Stitch
+* Esta parte cliente debe ir en un directorio llamado gallery-app
 * El diseño tiene que ser mobile friendly
 * Ante acciones que impliquen tiempo de espera tiene que mostrar un indicador de que se está procesando la petición
 * Será una aplicación llamada "AI Qué Bonito!" que se ejecute en Firebase Hosting
@@ -24,13 +25,14 @@
 * El orden de las imágenes se actualiza en función de los votos recibidos
 * Debe incluir una manera de ir a la app para generar el prompt aimadre.web.app/prompter/index.html
 * A igualdad de votos, se ordenará por la imagen cuyo prompt haya entrado antes, con lo que hay que mostrar esta información en el card
-* 
 * Cuando el usuario se loga en otra aplicación en el mismo dominio deja en el localStorage del navegador un ID. La galería tiene que comprobar que esto existe y si no es así, mostrar una tarjeta en la que se indique que se debe ir a la otra aplicación de generación de prompts para identificarse.
 * IMPORTANTE: Sólo se pueden permitir 3 votos por usuario
 * IMPORTANTE: El usuario puede cambiar su voto pulsando en uno de los votos que haya dado lo cual restará 1 de los votos de la imagen y sumará 1 a los votos restantes
+* Somos valientes, no queremos emplear el emulador. Irá directamente a producción fon firebase deploy
 
 #### BACKEND
 * **Configuración de entorno:** Se debe crear un archivo `.npmrc` con el contenido `registry=https://registry.npmjs.org/` en todos los directorios de Cloud Functions que se hagan. Esto evita que al utilizar un portátil corporativo el `package-lock.json` apunte a registros privados y falle el despliegue.
+* Esta parte servidora debe ir en un directorio llamado gallery-functions
 * El backend de la galería consistirá en varias cloud functions que:
 - Permitan leer las imágenes procesadas de una coleccion de Firestore llamada "prompts" con los documentos con el campo status=completed. Este es el esquema:
 comment: "Una imagen que capta la esencia del trabajo duro y la diplomacia corporativa. Seguro que los modelos de IA se sentirán muy identificados con esta profunda expresión artística."
@@ -54,3 +56,4 @@ username: "Pepe Luis"
 votes: 1
 - Que permitan upvotear un prompt. Esto incrementará en 1 los votos del prompt y retirar un voto lo cual restará un voto. La modificación del número de votos en Firestore se tendrá que hacer de forma transaccional.
 - Los nombres de las funciones deberán tener un prefijo como "aiquebonito_" para identificarlas claramente
+- Somos valientes, no queremos emplear el emulador. Irá directamente a producción fon firebase deploy

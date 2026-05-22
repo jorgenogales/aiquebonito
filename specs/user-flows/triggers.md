@@ -7,6 +7,7 @@
 
 ### PROCESADO DE IMÁGENES (Cloud Functions, Gemini API, Firestore, Cloud Storage)
 * **Configuración de entorno:** Se debe crear un archivo `.npmrc` con el contenido `registry=https://registry.npmjs.org/` en todos los directorios de Cloud Functions que se hagan. Esto evita que al utilizar un portátil corporativo el `package-lock.json` apunte a registros privados y falle el despliegue.
+* Esta parte servidora debe ir en un directorio llamado gallery-functions
 * Esta parte servidora tiene que registrar un trigger en Firestore que se dispare cuando se inserte un nuevo prompt en la colección prompts
 * El esquema de la colección prompts es el siguiente:
 comment: "Una imagen que capta la esencia del trabajo duro y la diplomacia corporativa. Seguro que los modelos de IA se sentirán muy identificados con esta profunda expresión artística."
@@ -29,6 +30,8 @@ username: "Pepe Luis"
 (string) 
 votes: 1
 * En cada trigger se hará una transacción (para evitar race conditions) donde se recoja el documento que origina el trigger y todos los documentos que estén por procesar en la colección. En ella se actualizará el campo status a "in-progress" y el campo processedAt con la fecha actual.
-* Para generar la imagen, el modelo al que se llame será "gemini-3.1-flash" (Nanobanana 2) y se deberá llamar con las librerías de Google Gen AI SDK
+* Para generar la imagen, el modelo al que se llame será "gemini-3.1-flash-image-preview" (Nanobanana 2) y se deberá llamar con las librerías de Google Gen AI SDK
 * En la medida de lo posible se deberán paralelizar hasta 5 peticiones (siendo esto configurable)
 * Una vez generada, almacenará la misma en un bucket público llamado "aiquebonito" y se actualizará el documento de Firestore con la ruta
+* Los nombres de las funciones deberán tener un prefijo como "aiquebonito_" para identificarlas claramente
+* Somos valientes, no queremos emplear el emulador. Irá directamente a producción fon firebase deploy
