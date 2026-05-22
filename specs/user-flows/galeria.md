@@ -8,7 +8,7 @@
 ## USER FLOWS
 
 ### GALLERY (LANDING PAGE)
-* Puedes encontrar un wireframe del diseño en el proyecto "AI Qué Bonito" de Stitch
+* IMPORTANTE: Puedes encontrar un wireframe del diseño en el proyecto "AI Qué Bonito" utilizando Stitch
 * Esta parte cliente debe ir en un directorio llamado gallery-app
 * El diseño tiene que ser mobile friendly
 * Ante acciones que impliquen tiempo de espera tiene que mostrar un indicador de que se está procesando la petición
@@ -17,7 +17,7 @@
 * Para mostrar las imágenes se utilizará la URL pública de los contenidos del bucket
 * La galería debe estar en 16:9 para mostrarse en un monitor gigante
 * Debe mostrar todo el contenido en una galería que se va actualizando cada 5 segundos
-* La imagen que se resalte como principal en la página será elegida aleatoriamente cada 5 segundos también
+* La imagen que se resalte como principal en la página será elegida aleatoriamente cada 7 segundos
 * Cada imagen debe estar sobre una tarjeta con el texto generado, el nombre del autor y el número de votos
 * En la esquina inferior derecha de cada tarjeta habrá un icono de upvote con el número de votos recibidos
 * Las imágenes no deben solaparse entre si
