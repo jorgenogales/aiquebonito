@@ -26,6 +26,7 @@
 * Debe incluir una manera de ir a la app para generar el prompt aimadre.web.app/prompter/index.html
 * A igualdad de votos, se ordenará por la imagen cuyo prompt haya entrado antes, con lo que hay que mostrar esta información en el card
 * Cuando el usuario se loga en otra aplicación en el mismo dominio deja en el localStorage del navegador un ID. La galería tiene que comprobar que esto existe y si no es así, mostrar una tarjeta en la que se indique que se debe ir a la otra aplicación de generación de prompts para identificarse.
+* IMPORTANTE: añade la imagen @qr-main.png en la galeria porque contiene el código QR para que la gente pueda acceder a la aplicación
 * IMPORTANTE: Sólo se pueden permitir 3 votos por usuario
 * IMPORTANTE: El usuario puede cambiar su voto pulsando en uno de los votos que haya dado lo cual restará 1 de los votos de la imagen y sumará 1 a los votos restantes
 * Somos valientes, no queremos emplear el emulador. Irá directamente a producción fon firebase deploy
