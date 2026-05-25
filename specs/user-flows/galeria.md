@@ -25,8 +25,9 @@
 * El orden de las imágenes se actualiza en función de los votos recibidos
 * Debe incluir una manera de ir a la app para generar el prompt aimadre.web.app/prompter/index.html
 * A igualdad de votos, se ordenará por la imagen cuyo prompt haya entrado antes, con lo que hay que mostrar esta información en el card
+* El usuario debe saber cuántos votos le quedan por dar
 * Cuando el usuario se loga en otra aplicación en el mismo dominio deja en el localStorage del navegador un ID. La galería tiene que comprobar que esto existe y si no es así, mostrar una tarjeta en la que se indique que se debe ir a la otra aplicación de generación de prompts para identificarse.
-* IMPORTANTE: añade la imagen @qr-main.png en la galeria porque contiene el código QR para que la gente pueda acceder a la aplicación
+* IMPORTANTE: añade la imagen @qr-main.png en la galeria porque contiene el código QR para que la gente pueda acceder a la aplicación. Este QR tiene que estar en la cabecera y ser grande y visible
 * IMPORTANTE: Sólo se pueden permitir 3 votos por usuario
 * IMPORTANTE: El usuario puede cambiar su voto pulsando en uno de los votos que haya dado lo cual restará 1 de los votos de la imagen y sumará 1 a los votos restantes
 * Somos valientes, no queremos emplear el emulador. Irá directamente a producción fon firebase deploy
@@ -57,4 +58,4 @@ username: "Pepe Luis"
 votes: 1
 - Que permitan upvotear un prompt. Esto incrementará en 1 los votos del prompt y retirar un voto lo cual restará un voto. La modificación del número de votos en Firestore se tendrá que hacer de forma transaccional.
 - Los nombres de las funciones deberán tener un prefijo como "aiquebonito_" para identificarlas claramente
-- Somos valientes, no queremos emplear el emulador. Irá directamente a producción fon firebase deploy
+- Somos valientes, no queremos emplear el emulador. Irá directamente a producción con "firebase deploy"
