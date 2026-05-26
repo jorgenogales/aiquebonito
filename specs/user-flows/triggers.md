@@ -34,4 +34,5 @@ votes: 1
 * En la medida de lo posible se deberán paralelizar hasta 5 peticiones (siendo esto configurable)
 * Una vez generada, almacenará la misma en un bucket público llamado "aiquebonito" y se actualizará el documento de Firestore con la ruta. **IMPORTANTE:** El bucket tiene habilitada la política de *Acceso Uniforme a Nivel de Bucket* (UBLA). Para evitar errores de permisos, **NO** se debe subir el archivo indicando la propiedad legacy de ACL `public: true`; la imagen heredará automáticamente el acceso público de la configuración global del bucket.
 * Los nombres de las funciones deberán tener un prefijo como "aiquebonito_" para identificarlas claramente
-* Somos valientes, no queremos emplear el emulador. Irá directamente a producción fon firebase deploy
+* Somos valientes, no queremos emplear el emulador. Irá directamente a producción fon firebase deploy.
+* No hagas pruebas, lo probaremos manualmente.
