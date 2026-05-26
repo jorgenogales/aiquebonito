@@ -18,7 +18,7 @@
 * La galería debe estar en 16:9 para mostrarse en un monitor gigante
 * Debe mostrar todo el contenido en una galería que se va actualizando cada 5 segundos
 * La imagen que se resalte como principal en la página será elegida aleatoriamente cada 7 segundos
-* Cada imagen debe estar sobre una tarjeta con el texto generado, el nombre del autor y el número de votos
+* Cada imagen debe estar sobre una tarjeta con el texto generado, el nombre del autor, el comentario de la IA y el número de votos.
 * En la esquina inferior derecha de cada tarjeta habrá un icono de upvote con el número de votos recibidos
 * Las imágenes no deben solaparse entre si
 * Ante un click de la imagen se presentará en pantalla completa
@@ -30,7 +30,8 @@
 * IMPORTANTE: añade la imagen @qr-main.png en la galeria porque contiene el código QR para que la gente pueda acceder a la aplicación. Este QR tiene que estar en la cabecera y ser grande y visible
 * IMPORTANTE: Sólo se pueden permitir 3 votos por usuario
 * IMPORTANTE: El usuario puede cambiar su voto pulsando en uno de los votos que haya dado lo cual restará 1 de los votos de la imagen y sumará 1 a los votos restantes
-* Somos valientes, no queremos emplear el emulador. Irá directamente a producción fon firebase deploy
+* Somos valientes, no queremos emplear el emulador. Irá directamente a producción con firebase deploy de manera manual
+
 
 #### BACKEND
 * **Configuración de entorno:** Se debe crear un archivo `.npmrc` con el contenido `registry=https://registry.npmjs.org/` en todos los directorios de Cloud Functions que se hagan. Esto evita que al utilizar un portátil corporativo el `package-lock.json` apunte a registros privados y falle el despliegue.
@@ -59,3 +60,6 @@ votes: 1
 - Que permitan upvotear un prompt. Esto incrementará en 1 los votos del prompt y retirar un voto lo cual restará un voto. La modificación del número de votos en Firestore se tendrá que hacer de forma transaccional.
 - Los nombres de las funciones deberán tener un prefijo como "aiquebonito_" para identificarlas claramente
 - Somos valientes, no queremos emplear el emulador. Irá directamente a producción con "firebase deploy"
+
+## MUY IMPORTANTE
+Separar en dos agentes la implementación de frontend y backend.
