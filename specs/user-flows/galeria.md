@@ -57,7 +57,7 @@ userId: "ay9qx0gdzHSfqcSWmpa0"
 username: "Pepe Luis"
 (string) 
 votes: 1
-- Que permitan upvotear un prompt. Esto incrementará en 1 los votos del prompt y retirar un voto lo cual restará un voto. La modificación del número de votos en Firestore se tendrá que hacer de forma transaccional.
+- Que permitan upvotear un prompt. Esto incrementará en 1 los votos del prompt y retirar un voto lo cual restará un voto. La modificación del número de votos en Firestore se tendrá que hacer de forma transaccional.  **MUY IMPORTANTE**: Las funciones que despliegues en Cloud Run tienen que tener el permiso "Cloud Run Invoker" para allUsers. 
 - Los nombres de las funciones deberán tener un prefijo como "aiquebonito_" para identificarlas claramente
 - Somos valientes, no queremos emplear el emulador. Irá directamente a producción con "firebase deploy"
 
