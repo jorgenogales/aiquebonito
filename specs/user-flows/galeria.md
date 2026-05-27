@@ -30,6 +30,7 @@
 * IMPORTANTE: añade la imagen @qr-main.png en la galeria porque contiene el código QR para que la gente pueda acceder a la aplicación. Este QR tiene que estar en la cabecera y ser grande y visible
 * IMPORTANTE: Sólo se pueden permitir 3 votos por usuario
 * IMPORTANTE: El usuario puede cambiar su voto pulsando en uno de los votos que haya dado lo cual restará 1 de los votos de la imagen y sumará 1 a los votos restantes
+* **Configuración de entorno:** Se debe crear un archivo `.npmrc` con el contenido `registry=https://registry.npmjs.org/` en todos los directorios de Cloud Functions que se hagan. Esto evita que al utilizar un portátil corporativo el `package-lock.json` apunte a registros privados y falle el despliegue.
 * Somos valientes, no queremos emplear el emulador. Irá directamente a producción con firebase deploy de manera manual
 
 
