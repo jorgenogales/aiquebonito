@@ -1,7 +1,7 @@
 # AI QUE BONITO
 
 ## CONTEXTO
-* Esta es una aplicación que se desarrollará en tiempo real en frente de una audiencia en un evento de Google Cloud llamado AI Live Madrid
+* Esta es una aplicación que se desarrollará en tiempo real en frente de una audiencia en un evento de Google Cloud llamado Barcelona AI Day
 * El propósito de esta aplicación es mostrar el funcionamiento de la nueva versión de Antigravity
 * El alcance de esta aplicación va a consistir en recoger datos (prompts) que los asistentes habrán dejado por medio de otra aplicación en una colleción de Firestore y llamar a Gemini para convertir esos prompts en imágenes y mostrar el resultado en una galería para que la gente pueda votar los contenidos generados para que se pueda dar un premio a la persona con el prompt que haya generado la imagen más votada
 
