@@ -8,6 +8,7 @@
 ### PROCESADO DE IMÁGENES (Cloud Functions, Gemini API, Firestore, Cloud Storage)
 * **Configuración de entorno:** Se debe crear un archivo `.npmrc` con el contenido `registry=https://registry.npmjs.org/` en todos los directorios de Cloud Functions que se hagan. Esto evita que al utilizar un portátil corporativo el `package-lock.json` apunte a registros privados y falle el despliegue.
 * Esta parte servidora debe ir en un directorio llamado gallery-functions
+* IMPORTANTE Enfocarse exclusivamente en las especificaciones definidas en este fichero dejando otros para más adelante
 * Esta parte servidora tiene que registrar un trigger en Firestore que se dispare cuando se inserte un nuevo prompt en la colección prompts
 * El esquema de la colección prompts es el siguiente:
 comment: "Una imagen que capta la esencia del trabajo duro y la diplomacia corporativa. Seguro que los modelos de IA se sentirán muy identificados con esta profunda expresión artística."
